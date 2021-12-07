@@ -137,11 +137,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Assign to Me"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAssignActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnProcess">
       <Properties>
         <Property name="text" type="java.lang.String" value="Process"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProcessActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane2">
       <AuxValues>
@@ -150,7 +156,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTable" name="jTable2">
+        <Component class="javax.swing.JTable" name="tblCost">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="4" rowCount="4">
@@ -205,16 +211,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&lt;Back"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBackActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCostAssign">
       <Properties>
         <Property name="text" type="java.lang.String" value="Assign to Me"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCostAssignActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnCostProcess">
       <Properties>
         <Property name="text" type="java.lang.String" value="Process"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCostProcessActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
