@@ -17,5 +17,10 @@ public class MechanicOrg extends Organizations{
         super(Organizations.Type.Mechanic.getValue());
     }
     
-    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new MechanicRole());
+        return roles;
+    }
 }
