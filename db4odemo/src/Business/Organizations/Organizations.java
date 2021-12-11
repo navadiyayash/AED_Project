@@ -75,5 +75,52 @@ public abstract class Organizations {
         this.MoneyClaim = MoneyClaim;
     }
 
+//enum is a class which defines a group of constants
+    public enum Type {
+        SCAdmin("Service Center Admin"), UserAdmin("User Admin"), LoanAdmin("Loan Admin"), Mechanic("Mechanic"), Buyer("Buyer"), Seller("Seller"), LoanAgent("Loan Agent");
+        private String value;
 
+        private Type(String value) {
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+    }
+
+    public UserDirectory getUserDir() {
+        return UserDir;
+    }
+
+    public void setUserDir(UserDirectory UserDir) {
+        this.UserDir = UserDir;
+    }
+
+    public UserAccDir getUserAccDir() {
+        return UserAccDir;
+    }
+
+    public void setUserAccDir(UserAccDir UserAccDir) {
+        this.UserAccDir = UserAccDir;
+    }
+
+    public Organizations(String name) {
+        this.Name = name;
+        this.CostEstimate = new WorkQueue();
+        this.MoneyClaim = new WorkQueue();
+        WorkQueue = new WorkQueue(); //this was not initialised
+        UserDir = new UserDirectory();
+        UserAccDir = new UserAccDir();
+        orgId = counter;
+        ++counter;
+
+    }
+
+    public abstract ArrayList<Role> getSupportedRole();
+
+    @Override
+    public String toString() {
+        return Name;
+    }
 }
