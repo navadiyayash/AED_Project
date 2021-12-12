@@ -252,7 +252,49 @@ public class ManageNetwork extends javax.swing.JPanel {
 }
     }
 
-    
+    private void populateTree() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+DefaultTreeModel model=(DefaultTreeModel)jTree.getModel();
+        ArrayList<Netwrk> networkList=system.getNtwkLst();
+        ArrayList<Enterprise> enterpriseList;
+        ArrayList<Organizations> organizationList;
+        
+        Netwrk network;
+        Enterprise enterprise;
+        Organizations organization;
+        
+        DefaultMutableTreeNode networks=new DefaultMutableTreeNode("Networks");
+        DefaultMutableTreeNode root=(DefaultMutableTreeNode)model.getRoot();
+        root.removeAllChildren();
+        root.insert(networks, 0);
+        
+        DefaultMutableTreeNode networkNode;
+        DefaultMutableTreeNode enterpriseNode;
+        DefaultMutableTreeNode organizationNode;
+        
+        for(int i=0;i<networkList.size();i++){
+            network=networkList.get(i);
+            networkNode=new DefaultMutableTreeNode(network.getNetwrkName());
+            networks.insert(networkNode, i);
+            
+            enterpriseList=network.getEnpr().getEpLst(); //  network.enterprise directory
+            for(int j=0; j<enterpriseList.size();j++){
+                enterprise=enterpriseList.get(j);
+                enterpriseNode=new DefaultMutableTreeNode(enterprise.getName());
+                networkNode.insert(enterpriseNode, j);
+                
+                organizationList=enterprise.getOrgDir().getOrgLst();  //enterprise.organization directory
+                for(int k=0;k<organizationList.size();k++){
+                    organization=organizationList.get(k);
+                    organizationNode=new DefaultMutableTreeNode(organization.getName());
+                    enterpriseNode.insert(organizationNode, k);
+                }
+            }
+        }
+        model.reload();
+    }
+
+
 
     
 }
