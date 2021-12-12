@@ -124,6 +124,14 @@ public class NetWork extends javax.swing.JPanel {
         layout.next(container);
     }//GEN-LAST:event_ManageNetworkBtnActionPerformed
 
+    private void RegisterEnterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterEnterBtnActionPerformed
+        // TODO add your handling code here:
+        RegisterEnterprise re =new RegisterEnterprise(container,system); //create constructor
+        CardLayout layout=(CardLayout)container.getLayout();
+         container.add(re);
+         layout.next(container);
+    }//GEN-LAST:event_RegisterEnterBtnActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ManageEnterprises;
