@@ -296,5 +296,14 @@ DefaultTreeModel model=(DefaultTreeModel)jTree.getModel();
 
 
 
+
+private void removeFromDB(DefaultTableModel model, int index) {
+         ArrayList<Netwrk> networkList=system.getNtwkLst();
+        networkList.remove(index);
+        System.out.println("Total Network size = " + networkList.size());
+           DB4OUtil db4o = DB4OUtil.getInstance();
+           system.setNtwkLst(networkList);
+           db4o.storeSystem(system);
+    }
     
 }
