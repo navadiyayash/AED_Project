@@ -60,7 +60,6 @@ public class WorkSpaceForAgent extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCompany = new javax.swing.JTable();
-        btnAssign = new javax.swing.JButton();
         btnApprove = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
 
@@ -85,15 +84,14 @@ public class WorkSpaceForAgent extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        tblCompany.setShowHorizontalLines(false);
+        tblCompany.setShowVerticalLines(false);
         jScrollPane1.setViewportView(tblCompany);
         if (tblCompany.getColumnModel().getColumnCount() > 0) {
             tblCompany.getColumnModel().getColumn(0).setResizable(false);
             tblCompany.getColumnModel().getColumn(1).setResizable(false);
             tblCompany.getColumnModel().getColumn(2).setResizable(false);
         }
-
-        btnAssign.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnAssign.setText("Assign to me");
 
         btnApprove.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnApprove.setText("Approve");
@@ -125,9 +123,7 @@ public class WorkSpaceForAgent extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 798, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(453, 453, 453)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAssign))))
+                        .addComponent(btnApprove, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(761, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -137,9 +133,7 @@ public class WorkSpaceForAgent extends javax.swing.JPanel {
                 .addComponent(btnBack)
                 .addGap(49, 49, 49)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
-                .addComponent(btnAssign)
-                .addGap(45, 45, 45)
+                .addGap(139, 139, 139)
                 .addComponent(btnApprove)
                 .addContainerGap(522, Short.MAX_VALUE))
         );
@@ -168,7 +162,6 @@ public class WorkSpaceForAgent extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnApprove;
-    private javax.swing.JButton btnAssign;
     private javax.swing.JButton btnBack;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblCompany;

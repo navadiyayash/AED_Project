@@ -29,11 +29,11 @@ public class BuyerRequest extends javax.swing.JPanel {
         initComponents();
         this.container = container;
         this.request=request;
-        txtMaintDetails.setText(request.getMilesDriven());
-        txtModel.setText(request.getVehModel());
+//        txtMaintDetails.setText(request.getMilesDriven());
+//        txtModel.setText(request.getVehModel());
         txtReqdVeh.setText(request.getVehicle());
         txtDate.setText(request.getManuYear());  //int cannot be converted to string
-        txtCondition.setText(request.getVehCond());
+//        txtCondition.setText(request.getVehCond());
     }
 
     /**
@@ -48,17 +48,11 @@ public class BuyerRequest extends javax.swing.JPanel {
         btnSubmit = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        lblModel = new javax.swing.JLabel();
         lblReqdVeh = new javax.swing.JLabel();
         lblManuDate = new javax.swing.JLabel();
-        lblVehCond = new javax.swing.JLabel();
-        lblMaintDet = new javax.swing.JLabel();
         lblVehUse = new javax.swing.JLabel();
         txtReqdVeh = new javax.swing.JTextField();
-        txtModel = new javax.swing.JTextField();
         txtDate = new javax.swing.JTextField();
-        txtCondition = new javax.swing.JTextField();
-        txtMaintDetails = new javax.swing.JTextField();
         txtUsability = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(240, 234, 199));
@@ -83,20 +77,11 @@ public class BuyerRequest extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Buyer Details");
 
-        lblModel.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblModel.setText("Vehicle Model :");
-
         lblReqdVeh.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblReqdVeh.setText("Required Vehicle :");
+        lblReqdVeh.setText("Buyer Preference :");
 
         lblManuDate.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblManuDate.setText("Manufacturing Date :");
-
-        lblVehCond.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblVehCond.setText("Vehicle Condition :");
-
-        lblMaintDet.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblMaintDet.setText("Miles Driven :");
 
         lblVehUse.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         lblVehUse.setText("Vehicle Usability ?");
@@ -119,39 +104,30 @@ public class BuyerRequest extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBack)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 204, Short.MAX_VALUE)
+                        .addContainerGap()
+                        .addComponent(btnBack))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(125, 125, 125)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblReqdVeh)
-                                    .addComponent(lblModel)
-                                    .addComponent(lblManuDate)
-                                    .addComponent(lblVehCond)
-                                    .addComponent(lblMaintDet)
-                                    .addComponent(lblVehUse, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(94, 94, 94)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtReqdVeh, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtCondition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtMaintDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtUsability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(226, 226, 226))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnSubmit)
-                                .addGap(373, 373, 373))))))
+                            .addComponent(lblReqdVeh)
+                            .addComponent(lblManuDate)
+                            .addComponent(lblVehUse, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtReqdVeh, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUsability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(226, 226, 226)
+                        .addComponent(btnSubmit)))
+                .addContainerGap(382, Short.MAX_VALUE))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtCondition, txtDate, txtMaintDetails, txtModel, txtReqdVeh, txtUsability});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {txtDate, txtReqdVeh, txtUsability});
 
-        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblMaintDet, lblManuDate, lblModel, lblReqdVeh, lblVehCond, lblVehUse});
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {lblManuDate, lblReqdVeh, lblVehUse});
 
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,30 +142,18 @@ public class BuyerRequest extends javax.swing.JPanel {
                     .addComponent(txtReqdVeh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblModel)
-                    .addComponent(txtModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblManuDate)
                     .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblVehCond)
-                    .addComponent(txtCondition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblMaintDet)
-                    .addComponent(txtMaintDetails, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblVehUse, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtUsability, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                .addGap(30, 30, 30)
                 .addComponent(btnSubmit)
-                .addGap(122, 122, 122))
+                .addGap(280, 280, 280))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtCondition, txtDate, txtMaintDetails, txtModel, txtReqdVeh, txtUsability});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {txtDate, txtReqdVeh, txtUsability});
 
     }// </editor-fold>//GEN-END:initComponents
 
@@ -209,15 +173,15 @@ public class BuyerRequest extends javax.swing.JPanel {
         request.setVehicle(txtUsability.getText());
         request.setStatus("Completed");
         JOptionPane.showMessageDialog(null,"Results Submitted!!");
-//        try{
-//            Email emailConfig= new Email();
-//            Properties smtpProperties = emailConfig.loadProperties();
-//            String email = String.valueOf(request.getSender());
-//            emailConfig.sendEmail(smtpProperties, email, "REquest completed", "Your request has being fullfilled please check the applications to get the details");
-//        }
-//            catch(Exception ex){
-//                
-//            }
+        try{
+            Email emailConfig= new Email();
+            Properties smtpProperties = emailConfig.loadProperties();
+            String email = String.valueOf(request.getSender());
+            emailConfig.sendEmail(smtpProperties, email, "REquest completed", "Your request has being fullfilled please check the applications to get the details");
+        }
+            catch(Exception ex){
+                
+            }
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     private void txtReqdVehActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReqdVehActionPerformed
@@ -233,16 +197,10 @@ public class BuyerRequest extends javax.swing.JPanel {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel lblMaintDet;
     private javax.swing.JLabel lblManuDate;
-    private javax.swing.JLabel lblModel;
     private javax.swing.JLabel lblReqdVeh;
-    private javax.swing.JLabel lblVehCond;
     private javax.swing.JLabel lblVehUse;
-    private javax.swing.JTextField txtCondition;
     private javax.swing.JTextField txtDate;
-    private javax.swing.JTextField txtMaintDetails;
-    private javax.swing.JTextField txtModel;
     private javax.swing.JTextField txtReqdVeh;
     private javax.swing.JTextField txtUsability;
     // End of variables declaration//GEN-END:variables
