@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author saneel
+ * @author harsh
  */
 public class UserAccDir {
     private ArrayList<UserAcc> userAccs;

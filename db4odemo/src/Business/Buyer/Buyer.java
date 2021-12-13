@@ -5,13 +5,12 @@ package Business.Buyer;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author yashn
  */
 public class Buyer {
-    
+
     private String ManuFactureYear;
     private String Miles;
     private String Tire;
@@ -48,6 +47,5 @@ public class Buyer {
     public void setAskPrice(String AskPrice) {
         this.AskPrice = AskPrice;
     }
-    
-    
+
 }

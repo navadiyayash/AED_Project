@@ -5,12 +5,11 @@
  */
 package Business;
 
-import Business.Netwrk.Netwrk; 
+import Business.Netwrk.Netwrk;
 
 //import Business.Customer.CustomerDirectory;
 //import Business.DeliveryMan.DeliveryManDirectory;
 //import Business.Restaurant.RestaurantDirectory;
-
 import Business.Organizations.Organizations;
 
 import Business.Role.Role;
@@ -21,36 +20,46 @@ import java.util.ArrayList;
  *
  * @author yashn
  */
-public class EcoSystem extends Organizations{
-    
+public class EcoSystem extends Organizations {
+
     private static EcoSystem AUTO;
-    
-    
     private ArrayList<Netwrk> ntwkLst;
 
-   
-    public static EcoSystem getInstance(){
-        if(AUTO==null){
-            AUTO=new EcoSystem();
+//    private RestaurantDirectory restaurantDirectory;
+//    private CustomerDirectory customerDirectory;
+//    private DeliveryManDirectory deliveryManDirectory;
+//    public EcoSystem(RestaurantDirectory restaurantDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory) {
+//
+//        this.restaurantDirectory = restaurantDirectory;
+//        this.customerDirectory = customerDirectory;
+//        this.deliveryManDirectory = deliveryManDirectory;
+//    }
+//    
+    public static EcoSystem getInstance() {
+
+        if (AUTO == null) {
+            AUTO = new EcoSystem();
         }
         return AUTO;
+
     }
-     public Netwrk createAndAddNetwrk()
-    {
+
+    public Netwrk createAndAddNetwrk() {
         Netwrk netwrk = new Netwrk();
         ntwkLst.add(netwrk);
         return netwrk;
     }
-    
+
     @Override
     public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roleList=new ArrayList<Role>();
+        ArrayList<Role> roleList = new ArrayList<Role>();
         roleList.add(new SysAdminRole());
         return roleList;
     }
-    private EcoSystem(){
+
+    private EcoSystem() {
         super(null);
-       ntwkLst=new ArrayList<Netwrk>();
+        ntwkLst = new ArrayList<Netwrk>();
     }
 
     public ArrayList<Netwrk> getNtwkLst() {
@@ -61,18 +70,19 @@ public class EcoSystem extends Organizations{
         this.ntwkLst = ntwkLst;
     }
 
-    
-    public boolean checkIfUserIsUnique(String userName){
-       //
+    public boolean checkIfUserIsUnique(String userName) {
+        //
 //       return false;
-       if(!this.getUserAccDir().checkIfUsernameIsUnique(userName)){
+        if (!this.getUserAccDir().checkIfUsernameIsUnique(userName)) {
             return false;
         }
-        for(Netwrk netwrk:ntwkLst){
-            
+        for (Netwrk network : ntwkLst) {
+
         }
         return true;
     }
-
-    }
-
+//
+//    private Object getUserAccDir() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+}

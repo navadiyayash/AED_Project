@@ -4,6 +4,8 @@
  */
 package Business.Enterprise;
 
+import Business.RTO.RTO;
+import static com.db4o.nativequery.NQDebug.LOG;
 import java.util.ArrayList;
 
 /**
@@ -42,6 +44,11 @@ public class EPDir {
         else if(type==Enterprise.EPType.LoanComp){
             enterprise= new LoanComp(name);
             epLst.add(enterprise);}
+        else if(type==Enterprise.EPType.RTO){
+            System.out.print("\nName - " + name + " || " + "Type - " + type);
+        enterprise=new RTO(name);
+        epLst.add((enterprise));}
+        System.out.print("RTOEnterprise - " + epLst.size());
         return enterprise;
     }
     

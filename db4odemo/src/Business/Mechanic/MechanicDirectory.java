@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author saneel
+ * @author harsh
  */
 public class MechanicDirectory {
     private ArrayList<Mechanic> MechanicLst;

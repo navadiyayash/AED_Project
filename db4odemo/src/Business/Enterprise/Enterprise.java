@@ -12,9 +12,11 @@ import Business.Organizations.Organizations;
  *
  * @author saneel
  */
+
+//abstract classes can be subclassed 
 public abstract class Enterprise extends Organizations {
-    
-        private OrgDir orgDir;
+
+    private OrgDir orgDir;
 
     public OrgDir getOrgDir() {
         return orgDir;
@@ -31,36 +33,45 @@ public abstract class Enterprise extends Organizations {
     public void setEpType(EPType epType) {
         this.epType = epType;
     }
-        private EPType epType;
+    private EPType epType;
 
-     public enum EPType{
-        ServiceCenter("Service center"),User("User"),LoanComp("Loan company");
-        
+    public enum EPType {
+        ServiceCenter("Service Center"),User("User"),LoanComp("Loan Company"),RTO(" "); //Regional Traffic Office
+//coming in dropdown for enterprise type
         private String value;
-        
-        private EPType(String value){
-            this.value=value;
+
+        private EPType(String value) {
+            this.value = value;
         }
+
         public String getValue() {
             return value;
         }
+
         @Override
-        public String toString(){
-        return value;
+        public String toString() {
+            return value;
+        }
     }
-    }
-     
-     public EPType getEPType() {
+
+    public EPType getEPType() {
         return epType;
     }
-     public void setEPType(EPType epType) {
+
+    public void setEPType(EPType epType) {
         this.epType = epType;
     }
-     
-     public Enterprise(String name,EPType type){
-    super(name);
-    this.epType=type;
-    orgDir=new OrgDir();
-   // enterpriseDir = new EnterpriseDirectory();
+
+    public Enterprise(String name, EPType type) {
+        super(name);
+        this.epType = type;
+        orgDir = new OrgDir();
+        // enterpriseDir = new EnterpriseDirectory();
     }
+
+//    public class getOrgDir {
+//
+//        public getOrgDir() {
+//        }
+//    }
 }
