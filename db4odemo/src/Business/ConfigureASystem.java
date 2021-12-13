@@ -1,0 +1,29 @@
+package Business;
+
+//import Business.Employee.Employee;
+import Business.Role.SysAdminRole;
+import Business.UserAccount.UserAcc;
+import com.db4o.User;
+
+/**
+ *
+ * @author yashn
+ */
+public class ConfigureASystem {
+
+    public static EcoSystem configure() {
+
+//        EcoSystem system = EcoSystem.getInstance();
+//        
+//        //Create a network
+//        //create an enterprise
+//        //initialize some organizations
+//        //have some employees 
+//        //create user account
+        EcoSystem system = EcoSystem.getInstance();
+        Business.User.User user = system.getUserDir().createUser("AUTO");
+        UserAcc ua = system.getUserAccDir().createUserAcc("admin", "admin", user, new SysAdminRole());
+        return system;
+    }
+
+}
